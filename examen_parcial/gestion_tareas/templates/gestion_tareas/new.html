@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de tareas</title>
+    <script src="https://kit.fontawesome.com/8f8726cd66.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:400,500,500i,700,800i" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm   navbar-light bg-light">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03"
+                aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                    <li>
+                        <h4>DESARROLLO WEB - PYTHON</h4>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Inicio<span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Usuarios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Clientes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Servicios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Productos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Ingresos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Configuración</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Datos Contables</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Ventas</a>
+                    </li>
+            </div>
+            <div>
+                <button type="" class="bg-success rounded">Salir</button>
+            </div>
+        </nav>
+    </header>
+    <section>
+        <div class="container">
+            <h1 class="pt-4">REGISTRO DE TAREAS</h1>
+
+            <div class="table-responsive border-0 pt-4">
+                <table class="table align-middle p-4 mb-0 table-hover table-shrink">
+                    <!-- Table head -->
+                    <thead class="table-dark">
+                        <tr>
+                            <th scope="col" class="border-0 rounded-start">ID</th>
+                            <th scope="col" class="border-0">Nombre</th>
+                            <th scope="col" class="border-0">Apellido</th>
+                            <th scope="col" class="border-0">Titulo de tarea</th>
+                            <th scope="col" class="border-0">Fecha de publicación</th>
+                            <th scope="col" class="border-0 rounded-end">Acción</th>
+                        </tr>
+                    </thead>
+                    
+                    <!-- Table body START -->
+                    <tbody class="border-top-0">
+						<form method="post" action="{% url 'gestion_tareas:dashboard' %}">
+						{% csrf_token %}
+							<!-- Table item -->
+							<tr>
+								<!-- Table data -->
+								<td>
+									<input type="number" name="idUsuario" style='width: 40px;'>
+								</td>
+								<td>
+									<input type="text" name="nombreUsuario" style='width: 150px;'>
+								</td>
+								<td>
+									<input type="text" name="apellidoUsuario" style='width: 150px;'>
+								</td>
+								<td>
+									<input type="text" name="tareaUsuario" style='width: 250px;'>
+								</td>
+								<td>
+									<input type="date" name="fechaUsuario" style='width: 150px;'>
+								</td>
+
+								<td>
+									<div class="d-flex gap-2">
+										<button type="submit" name="guardar" href="dashboard" class="btn btn-primary btn-round mb-0" data-bs-toggle="tooltip"
+											data-bs-placement="top" title="Guardar"><i class="fas fa-save"></i></button>
+									</div>
+								</td>
+							</tr>
+						</form>
+                    </tbody>
+                    <!-- Table body END -->
+                </table>
+            </div>
+    </section>
+</body>
+
+</html>
